@@ -12,20 +12,7 @@ const userController = require("../controllers/user/userController")
 
 adminRoute.post("/appoinment",userController.addAppoinment)
 
-// adminRoute.get("/login",auth.isLogout,loginSignupController.loadLogin)
-
-// adminRoute.post("/login",loginSignupController.verifyLogin)
-
-// adminRoute.get("/logout",auth.isLogin,loginSignupController.logout)
-
-// adminRoute.get("/dashboard",auth.isLogin,mainController.loadDashboard)
-
-// // Sales Repot
-
-// adminRoute.get("/sales-report",auth.isLogin,mainController.loadSalesReport)
-
-// adminRoute.post("/sales-report",auth.isLogin,mainController.loadSalesReport)
-
+adminRoute.get("/get-appoinment",userController.getAppoinments)
 
 
 module.exports = adminRoute;

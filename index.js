@@ -7,7 +7,9 @@ const mongoose = require("mongoose")
 const noCache = require('nocache');
 const cors = require('cors')
 
-mongoose.connect("mongodb://127.0.0.1:27017/skinMtask");
+mongoose.connect('mongodb+srv://mohdhaneenpk666:mP6YS3N4sh8dXhFC@skintask.5ttgv.mongodb.net/?retryWrites=true&w=majority&appName=skintask')
+    .then(() => console.log("MongoDB connected successfully"))
+    .catch((err) => console.log(err))
 
 app.use(noCache());
 
@@ -20,10 +22,10 @@ const doctorRoute = require("./routes/doctorRoute")
 const userRoute = require("./routes/userRoute")
 
 
-app.use("/api/user",userRoute)
+app.use("/api/user", userRoute)
 
-app.use("/api/doctor",doctorRoute)
+app.use("/api/doctor", doctorRoute)
 
 const PORT = process.env.PORT
 
-app.listen(PORT,() => console.log(`Server Running on port ${PORT}...`));
+app.listen(PORT, () => console.log(`Server Running on port ${PORT}...`));
